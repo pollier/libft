@@ -6,9 +6,11 @@
 /*   By: pollier <pollier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/11 00:13:09 by pollier           #+#    #+#             */
-/*   Updated: 2015/05/11 01:08:36 by pollier          ###   ########.fr       */
+/*   Updated: 2015/05/11 01:17:39 by pollier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_realloc(char **src, size_t n_length, size_t old_length)
 {

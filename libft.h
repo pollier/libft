@@ -6,7 +6,7 @@
 /*   By: pollier <pollier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 16:05:48 by pollier           #+#    #+#             */
-/*   Updated: 2015/05/11 01:13:43 by pollier          ###   ########.fr       */
+/*   Updated: 2015/05/11 01:18:17 by pollier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char			*ft_itoa(int n);
 void			ft_bzero(void *s, size_t n);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
-char			*ft_realloc(char *src, size_t n_length, size_t old_length);
+void			ft_realloc(char **src, size_t n_length, size_t old_length);
 void			ft_append(char *old, char *new, size_t s_old, size_t s_new);
 
 /*
