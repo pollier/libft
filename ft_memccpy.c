@@ -6,13 +6,13 @@
 /*   By: pollier <pollier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 16:10:01 by pollier           #+#    #+#             */
-/*   Updated: 2015/03/03 05:45:38 by pollier          ###   ########.fr       */
+/*   Updated: 2015/09/09 09:49:21 by pollier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memccpy(void *dst, const void *src, int c, size_t n)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	unsigned int	index;
 	unsigned char	*dest;

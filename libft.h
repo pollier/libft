@@ -6,7 +6,7 @@
 /*   By: pollier <pollier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 16:05:48 by pollier           #+#    #+#             */
-/*   Updated: 2015/05/11 01:18:17 by pollier          ###   ########.fr       */
+/*   Updated: 2015/10/15 23:04:16 by pollier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
+# define BUFF_SIZE 10000
 
 typedef struct	s_list
 {
@@ -23,6 +24,12 @@ typedef struct	s_list
 	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
+
+/*
+**	get_next_line
+*/
+
+int				get_next_line(int const fd, char **line);
 
 /*
 **	misc
@@ -34,7 +41,6 @@ void			ft_bzero(void *s, size_t n);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
 void			ft_realloc(char **src, size_t n_length, size_t old_length);
-void			ft_append(char *old, char *new, size_t s_old, size_t s_new);
 
 /*
 **	is
@@ -47,6 +53,7 @@ int				ft_isalpha(int c);
 int				ft_isascii(int c);
 int				ft_isdigit(int c);
 int				ft_isprint(int c);
+int				ft_white_space(char c);
 
 /*
 **	mem
@@ -60,6 +67,7 @@ void			*ft_memcpy(void *dst, const void *src, size_t n);
 void			ft_memdel(void **ap);
 void			*ft_memmove(void *dest, const void *src, size_t n);
 void			*ft_memset(void *b, int c, size_t n);
+void			*ft_memnew(size_t size);
 
 /*
 **	put
@@ -73,6 +81,8 @@ void			ft_putnbr(int n);
 void			ft_putstr(char *str);
 void			ft_putstr_fd(char const *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
+void			ft_put_char_tab(char **tab);
+char			**ft_dup_char_tab(char **tab);
 
 /*
 **	string
@@ -105,6 +115,7 @@ char			*ft_strnstr(const char *s1, const char *s2, size_t n);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
 char			*ft_strncat(char *s1, const char *s2, size_t n);
+char			*ft_implode(char **pieces, char *glue);
 
 /*
 **	list
@@ -113,7 +124,7 @@ char			*ft_strncat(char *s1, const char *s2, size_t n);
 t_list			*ft_lstnew(void const *content, size_t content_size);
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-void			ft_lstadd(t_list **alst, t_list *new);
+void			ft_lstadd(t_list **alst, t_list *new_elem);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 #endif

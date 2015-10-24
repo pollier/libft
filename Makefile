@@ -12,7 +12,8 @@ ft_putstr.c ft_strcpy.c ft_strlen.c ft_strrchr.c ft_strstr.c \
 ft_strnstr.c ft_memccpy.c ft_memcpy.c ft_putchar.c ft_strcat.c \
 ft_strdup.c ft_strndup.c ft_strncat.c ft_putendl.c ft_lstdelone.c \
 ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_strmapi.c ft_lstmap.c \
-ft_lstnew.c ft_realloc.c
+ft_lstnew.c ft_realloc.c ft_white_space.c get_next_line.c ft_implode.c \
+ft_memnew.c ft_put_char_tab.c ft_dup_char_tab.c
 
 OBJ = $(LIBFT:.c=.o)
 

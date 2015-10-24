@@ -6,16 +6,11 @@
 /*   By: pollier <pollier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/10 23:55:54 by pollier           #+#    #+#             */
-/*   Updated: 2015/03/03 12:54:25 by pollier          ###   ########.fr       */
+/*   Updated: 2015/10/04 04:26:31 by pollier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int		ft_white_space(char c)
-{
-	return (c == ' ' || c == '\n' || c == '\t');
-}
 
 char	*ft_strtrim(const char *s)
 {

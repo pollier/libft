@@ -6,13 +6,13 @@
 /*   By: pollier <pollier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 18:34:38 by pollier           #+#    #+#             */
-/*   Updated: 2014/11/09 01:08:02 by pollier          ###   ########.fr       */
+/*   Updated: 2015/09/09 09:51:40 by pollier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (ft_islower(c))
 		return (c - 32);
