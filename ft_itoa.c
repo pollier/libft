@@ -6,7 +6,7 @@
 /*   By: pollier <pollier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/11 02:26:55 by pollier           #+#    #+#             */
-/*   Updated: 2014/11/16 12:34:15 by pollier          ###   ########.fr       */
+/*   Updated: 2015/11/07 06:01:28 by pollier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char			*ft_itoa(int n)
 	unsigned int	nplus;
 
 	index = ft_ilen(n) + ((n < 0) ? 2 : 1);
-	if (!(str = malloc(index)))
+	if (!(str = malloc(sizeof(char) * (index + 1))))
 		return (NULL);
 	if (n < 0)
 		str[0] = '-';

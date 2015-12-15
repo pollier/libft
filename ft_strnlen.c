@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_char_tab.c                                  :+:      :+:    :+:   */
+/*   ft_strnlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pollier <pollier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/10/12 05:18:36 by pollier           #+#    #+#             */
-/*   Updated: 2015/11/07 05:44:56 by pollier          ###   ########.fr       */
+/*   Created: 2015/11/11 01:52:38 by pollier           #+#    #+#             */
+/*   Updated: 2015/11/11 01:57:48 by pollier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_put_char_tab(char **tab)
+size_t		ft_strnlen(const char *str, size_t size)
 {
-	while (tab)
-	{
-		if (*tab)
-		{
-			ft_putstr(*tab);
-			ft_putchar('\n');
-			tab++;
-		}
-		else
-		{
-			break ;
-		}
-	}
+	size_t		i;
+
+	i = 0;
+	while (str && i < size && str[i])
+		i++;
+	return (i);
 }

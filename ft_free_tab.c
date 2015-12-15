@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_char_tab.c                                  :+:      :+:    :+:   */
+/*   ft_free_tab.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pollier <pollier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/10/12 05:18:36 by pollier           #+#    #+#             */
-/*   Updated: 2015/11/07 05:44:56 by pollier          ###   ########.fr       */
+/*   Created: 2015/11/07 09:36:26 by pollier           #+#    #+#             */
+/*   Updated: 2015/12/15 13:06:44 by pollier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_put_char_tab(char **tab)
+char	**ft_free_tab(char **tab)
 {
-	while (tab)
+	size_t		i;
+	size_t		j;
+
+	i = 0;
+	j = 0;
+	while (tab && tab[i])
 	{
-		if (*tab)
-		{
-			ft_putstr(*tab);
-			ft_putchar('\n');
-			tab++;
-		}
-		else
-		{
-			break ;
-		}
+		free(tab[i]);
+		tab[i] = NULL;
+		i++;
 	}
+	free(tab);
+	return (NULL);
 }

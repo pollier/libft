@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+t_list	*ft_lstnew(void const *content, size_t size)
 {
 	t_list	*new_element;
 
@@ -20,14 +20,14 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	if (!content)
 	{
 		new_element->content = NULL;
-		new_element->content_size = 0;
+		new_element->size = 0;
 	}
 	else
 	{
-		new_element->content_size = content_size;
-		if (!(new_element->content = malloc(content_size)))
+		new_element->size = size;
+		if (!(new_element->content = malloc(size)))
 			return (NULL);
-		ft_memcpy(new_element->content, content, content_size);
+		ft_memcpy(new_element->content, content, size);
 	}
 	new_element->next = NULL;
 	return (new_element);

@@ -6,7 +6,7 @@
 /*   By: pollier <pollier@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 16:05:48 by pollier           #+#    #+#             */
-/*   Updated: 2015/10/15 23:04:16 by pollier          ###   ########.fr       */
+/*   Updated: 2015/12/15 13:07:03 by pollier          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 typedef struct	s_list
 {
 	void			*content;
-	size_t			content_size;
+	size_t			size;
 	struct s_list	*next;
 }				t_list;
 
@@ -40,7 +40,8 @@ char			*ft_itoa(int n);
 void			ft_bzero(void *s, size_t n);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
-void			ft_realloc(char **src, size_t n_length, size_t old_length);
+void			ft_realloc(void **src, size_t n_length, size_t old_length);
+char			**ft_free_tab(char **tab);
 
 /*
 **	is
@@ -79,6 +80,7 @@ void			ft_putendl(char const *s);
 void			ft_putendl_fd(char const *s, int fd);
 void			ft_putnbr(int n);
 void			ft_putstr(char *str);
+void			ft_putnstr(char *str, size_t size);
 void			ft_putstr_fd(char const *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 void			ft_put_char_tab(char **tab);
@@ -107,6 +109,7 @@ char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s);
 char			**ft_strsplit(char const *s, char c);
 size_t			ft_strlen(const char *s);
+size_t			ft_strnlen(const char *str, size_t size);
 char			*ft_strncpy(char *dst, const char *src, size_t n);
 char			*ft_strnew(size_t size);
 char			*ft_strrchr(const char *s, int c);
@@ -121,7 +124,7 @@ char			*ft_implode(char **pieces, char *glue);
 **	list
 */
 
-t_list			*ft_lstnew(void const *content, size_t content_size);
+t_list			*ft_lstnew(void const *content, size_t size);
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstadd(t_list **alst, t_list *new_elem);

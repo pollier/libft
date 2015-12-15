@@ -16,7 +16,7 @@ void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
 	while (*alst)
 	{
-		(*del)((*alst)->content, (*alst)->content_size);
+		(*del)((*alst)->content, (*alst)->size);
 		(*alst) = (*alst)->next;
 	}
 }
